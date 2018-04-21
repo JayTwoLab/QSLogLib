@@ -3,7 +3,7 @@
 > *Read this in other languages: [English](README.md), [한국어](README.ko.md)*
 
 ## Introduction
-- QSLogLib is a library of SLogLibs ported to Qt5.
+- QSLogLib is a log library based on SLogLibs.
 - It is ported to Qt with improved devices and function.
 
 ## Note
