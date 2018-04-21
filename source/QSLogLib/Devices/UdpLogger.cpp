@@ -57,6 +57,7 @@ void UdpLogger::_WriteMessage(const std::string& message)
 {
     QByteArray ba = QByteArray::fromStdString(message);
     qint64 ret = udpSocket.writeDatagram( ba, DestAddress, usDestPort );
+    qDebug() << " retuen value of udp socket : "<< ret ;
 }
 
 //------------------------------------------------------------------------
