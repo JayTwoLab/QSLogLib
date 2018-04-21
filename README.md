@@ -67,6 +67,10 @@ int main(int argc, char *argv[])
 ## Authors
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
-	
+
+## Contacts
+- j2doll@gmail.com
+- Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
+
 ## License
 - MIT Licensse
