@@ -43,14 +43,13 @@ int main(int argc, char *argv[])
 {
     QCoreApplication mainApp(argc, argv);
 
-    // Add these lines at the beginning of your program.
-    // The devices and formatters are automatically deleted by SLogLib.
     using namespace SLogLib;
 
-    addLoggingDevice( new ConsoleLogger(new NullFormatter) );
+    addLoggingDevice( new ConsoleLogger(new NullFormatter) ); 
     addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
 
     // The following line writes the message to both console and file.
+	// Console means standard output, and output file means 'foo.log'.
     int a = 10;
     double b = 15.3;
     const char* c = "Success";
@@ -58,7 +57,6 @@ int main(int argc, char *argv[])
     SLOGLIB_LOG_MSG_INFO(c);
 
     return 0;
-    // return a.exec();
 }
 ```
 
@@ -66,15 +64,13 @@ int main(int argc, char *argv[])
 ```cpp
 int main()
 {
-	// Add these lines at the beginning of your program.
-	// The devices and formatters are automatically deleted by SLogLib.
 	using namespace SLogLib;
 
-    std::string strDestAddress = "192.168.137.1";
-    unsigned short destPort = 5000;
+	std::string strDestAddress = "192.168.137.1";
+	unsigned short destPort = 5000;
 	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
 
-	// The following line writes the message to both console and file.
+	// The following line writes the message to UDP socket.
 	int a = 10;
 	double b = 15.3;
 	const char* c = "Success";
