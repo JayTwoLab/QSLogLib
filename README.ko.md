@@ -41,22 +41,22 @@ include(../../QSLogLib/QSLogLib.pri)
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication mainApp(argc, argv);
+	QCoreApplication mainApp(argc, argv);
 
-    using namespace SLogLib;
+	using namespace SLogLib;
 
-    addLoggingDevice( new ConsoleLogger(new NullFormatter) );
-    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
+	addLoggingDevice( new ConsoleLogger(new NullFormatter) );
+	addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
 
-    // 다음 줄은 콘솔과 파일로 송신된다.
+	// 다음 줄은 콘솔과 파일로 송신된다.
 	// 콘솔은 표준 출력을 의미하며, 파일은 'foo.log'를 의미한다.
-    int a = 10;
-    double b = 15.3;
-    const char* c = "Success";
-    SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
-    SLOGLIB_LOG_MSG_INFO(c);
+	int a = 10;
+	double b = 15.3;
+	const char* c = "Success";
+	SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
+	SLOGLIB_LOG_MSG_INFO(c);
 
-    return 0;
+	return 0;
 }
 ```
 

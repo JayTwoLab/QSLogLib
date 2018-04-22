@@ -41,22 +41,22 @@ include(../../QSLogLib/QSLogLib.pri)
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication mainApp(argc, argv);
+	QCoreApplication mainApp(argc, argv);
 
-    using namespace SLogLib;
+	using namespace SLogLib;
 
-    addLoggingDevice( new ConsoleLogger(new NullFormatter) ); 
-    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
+	addLoggingDevice( new ConsoleLogger(new NullFormatter) ); 
+	addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
 
-    // The following line writes the message to both console and file.
+	// The following line writes the message to both console and file.
 	// Console means standard output, and output file means 'foo.log'.
-    int a = 10;
-    double b = 15.3;
-    const char* c = "Success";
-    SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
-    SLOGLIB_LOG_MSG_INFO(c);
+	int a = 10;
+	double b = 15.3;
+	const char* c = "Success";
+	SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
+	SLOGLIB_LOG_MSG_INFO(c);
 
-    return 0;
+	return 0;
 }
 ```
 
