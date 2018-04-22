@@ -12,7 +12,8 @@
 - UDP 클라이언트 로거가 추가되었습니다.
 
 ## 예제
-### LoggingDemo
+
+### 설정 방법
 - 처음에 Qt 프로젝트 파일(*.pro)에 pri 파일을 추가합니다.
 ```
 # Define QSLogLib relative path. You can fix this directory
@@ -21,7 +22,8 @@
 #   QSLOG_SOURCEPATH = ../../QSLogLib/
 include(../../QSLogLib/QSLogLib.pri)
 ```
-- Code of main.cpp
+
+### 표준 출력/파일 로깅 예제
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -59,6 +61,29 @@ int main(int argc, char *argv[])
     // return a.exec();
 }
 ```
+
+### UDP 송신 예제
+```cpp
+int main()
+{
+	// Add these lines at the beginning of your program.
+	// The devices and formatters are automatically deleted by SLogLib.
+	using namespace SLogLib;
+
+    std::string strDestAddress = "192.168.137.1";
+    unsigned short destPort = 5000;
+	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
+
+	// The following line writes the message to both console and file.
+	int a = 10;
+	double b = 15.3;
+	const char* c = "Success";
+	SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
+	SLOGLIB_LOG_MSG_INFO(c);
+
+	return 0;
+}
+
 ## 테스트 환경
 - Qt 5.10.1 (MingW, Windows 32bit)
 - Qt 5.6.2 (Linux 64bit)

@@ -12,7 +12,8 @@
 - UDP client logger has been added. 
 
 ## Example
-### LoggingDemo
+
+### How to setup
 - First, include pri file on youq Qt project file(*.pro).
 ```
 # Define QSLogLib relative path. You can fix this directory
@@ -21,7 +22,8 @@
 #   QSLOG_SOURCEPATH = ../../QSLogLib/
 include(../../QSLogLib/QSLogLib.pri)
 ```
-- Code of main.cpp
+
+### Example for standard output and file
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -57,6 +59,29 @@ int main(int argc, char *argv[])
 
     return 0;
     // return a.exec();
+}
+```
+
+### Example for udp transmission
+```cpp
+int main()
+{
+	// Add these lines at the beginning of your program.
+	// The devices and formatters are automatically deleted by SLogLib.
+	using namespace SLogLib;
+
+    std::string strDestAddress = "192.168.137.1";
+    unsigned short destPort = 5000;
+	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
+
+	// The following line writes the message to both console and file.
+	int a = 10;
+	double b = 15.3;
+	const char* c = "Success";
+	SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
+	SLOGLIB_LOG_MSG_INFO(c);
+
+	return 0;
 }
 ```
 
