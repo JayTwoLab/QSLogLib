@@ -1,10 +1,13 @@
 #-------------------------------------------------
 # QSLogLib.pri 
 #
+# Author
+#   SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
+#   QSLogLib : j2doll https://github.com/j2doll/QSLogLib
+#
 # MIT License
-# Author: j2doll
-# Contacts https://github.com/j2doll/QSLogLib
-# e-amil   j2doll@gmail.com
+#
+# j2doll@gmail.com
 #-------------------------------------------------
 
 QT += core
