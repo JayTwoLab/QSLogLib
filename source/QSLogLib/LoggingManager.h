@@ -37,6 +37,7 @@ public:
 		static LoggingManager _singleton;
 		return _singleton;
 	}
+	// TODO: If it uses singleton value, how about thread-safe mechanism? 
 	
 	// Add a new logging device. The device is owned by the logging manager and is automatically 
 	// deleted when LoggingManager is destructed.
