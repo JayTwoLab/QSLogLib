@@ -19,6 +19,7 @@ LoggingManager::LoggingManager()
 {
 	mIsDisabled = false;
 }
+
 LoggingManager::~LoggingManager()
 {
 	// Delete all LoggingDevices.
@@ -158,7 +159,11 @@ void LoggingManager::WriteMessage(const std::string& fileName,
 			AbstractLoggingDevice* _device = *iter;
 			if(_device->IsEnabled())
 			{
+                mMutex.lock(); // lock the mutex
+
 				_device->WriteMessage(_message);
+
+                mMutex.unlock(); // unlock the mutex
 			}
 		}
 		

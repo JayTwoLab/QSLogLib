@@ -10,7 +10,8 @@
 #ifndef _SLOGLIB_LOGGINGMANAGER_H_
 #define _SLOGLIB_LOGGINGMANAGER_H_
 
-// #include "SLogLib/Config.h"
+#include <QMutex>
+
 #include "QSLogLib/AddToCallStack.h"
 #include "QSLogLib/Devices/AbstractLoggingDevice.h"
 
@@ -37,8 +38,7 @@ public:
 		static LoggingManager _singleton;
 		return _singleton;
 	}
-	// TODO: If it uses singleton value, how about thread-safe mechanism? 
-	
+
 	// Add a new logging device. The device is owned by the logging manager and is automatically 
 	// deleted when LoggingManager is destructed.
 	void AddDevice(AbstractLoggingDevice* device);
@@ -93,6 +93,8 @@ private:
 	
 	// If true then disable logging.
 	bool mIsDisabled;
+
+    QMutex mMutex;
 };
 
 };	// End namespace SLogLib.
