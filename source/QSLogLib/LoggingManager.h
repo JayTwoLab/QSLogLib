@@ -89,7 +89,7 @@ private:
 	LoggingDeviceList mLoggingDevices;
 	
 	// For storing the current call stack.
-	CallStack mCallStack;
+	CallStack mCallStack; // why is this needed?
 	
 	// If true then disable logging.
 	bool mIsDisabled;
