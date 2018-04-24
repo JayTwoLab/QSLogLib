@@ -106,7 +106,7 @@ AbstractLoggingDevice* LoggingManager::QueryDevice(const std::string& deviceName
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+/*
 void LoggingManager::PushFunction(const std::string& fileName,
 	                              const std::string& funcName, 
 								  unsigned int       lineNumber)
@@ -116,10 +116,7 @@ void LoggingManager::PushFunction(const std::string& fileName,
 		mCallStack.push_back(CallInfo(fileName, funcName, lineNumber));
 	}
 }
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 void LoggingManager::PopFunction()
 {
 	if(!mIsDisabled)
@@ -127,7 +124,7 @@ void LoggingManager::PopFunction()
 		mCallStack.pop_back();
 	}
 }
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+*/
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
@@ -159,11 +156,7 @@ void LoggingManager::WriteMessage(const std::string& fileName,
 			AbstractLoggingDevice* _device = *iter;
 			if(_device->IsEnabled())
 			{
-                mMutex.lock(); // lock the mutex
-
 				_device->WriteMessage(_message);
-
-                mMutex.unlock(); // unlock the mutex
 			}
 		}
 		

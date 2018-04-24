@@ -10,24 +10,15 @@
 #ifndef _SLOGLIB_LOGGINGMANAGER_H_
 #define _SLOGLIB_LOGGINGMANAGER_H_
 
-#include <QMutex>
+// #include <QMutex>
 
 #include "QSLogLib/AddToCallStack.h"
 #include "QSLogLib/Devices/AbstractLoggingDevice.h"
 
 namespace SLogLib {
-;
 
-// The LoggingManager class the core engine. It manages various logging devices and writes messages 
-// to currently enabled logging devices.
-// 
-// LoggingManager is a single instance class. Use Instance() static function to get its instance.
-// It is possible to disable logging at runtime using DisableLoggin() or SetIsDisabled(). To
-// enable logging again use EnableLogging(). The current status can be retrieved by isDisabled().
-// Note that if logging is disabled then devices cannot be added or removed.
-// 
-// Easy to use macros and functions are provided in Logging.h and they should be used rather than 
-// this class.
+// WARN: LoggingManager is not thread-safe!
+// TODO: make it thread-safe.
 class  LoggingManager
 {
 public:
@@ -50,6 +41,7 @@ public:
 	// Get a pointer to the logging device from name.
 	AbstractLoggingDevice* QueryDevice(const std::string& deviceName);
 
+    /*
 	// Push a function to the current call stack.
 	void PushFunction(const std::string& fileName, 
 		              const std::string& funcName,  
@@ -57,13 +49,18 @@ public:
 	
 	// Pop the topmost function from the call stack.
 	void PopFunction();
-	
+    */
+
+// LogThread
 	// Write the message to all enabled logging devices.
 	void WriteMessage(const std::string& fileName, 
 		              const std::string& funcName, 
 					  unsigned int       lineNumber,
 					  unsigned int       level,
 					  const std::string& message);
+
+// LogThread::WriteMessage() : TO-MAKE
+// LoggingManager::WriteMessage()
 	
 	// Destruct the logger.
 	~LoggingManager();
@@ -87,14 +84,16 @@ private:
 	
 	// For storing the list of logging devices.
 	LoggingDeviceList mLoggingDevices;
-	
-	// For storing the current call stack.
-	CallStack mCallStack; // why is this needed?
-	
-	// If true then disable logging.
-	bool mIsDisabled;
 
-    QMutex mMutex;
+    // If true then disable logging.
+    bool mIsDisabled;
+
+// LogThread
+	// For storing the current call stack.
+    CallStack mCallStack; // NOTE: call stack is needed for every thread!!
+
+// vector of LogThread
+
 };
 
 };	// End namespace SLogLib.

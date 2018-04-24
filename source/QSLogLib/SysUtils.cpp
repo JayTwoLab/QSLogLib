@@ -38,8 +38,8 @@ int64_t getCurrentProcessID()
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 uint64_t getCurrentThreadID()
 {
- uint64_t ret = (uint64_t) QThread::currentThreadId();
- return ret;
+     uint64_t ret = (uint64_t) QThread::currentThreadId();
+     return ret;
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
