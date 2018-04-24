@@ -94,4 +94,4 @@ int main()
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
 
 ## License
-- MIT Licensse
+- MIT License
