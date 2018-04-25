@@ -23,7 +23,7 @@
 include(../../QSLogLib/QSLogLib.pri)
 ```
 
-### Example for standard output and file
+### Logging Example for standard output and file
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-### Example for udp transmission
+### Logging Example for udp transmission
 ```cpp
 int main(int argc, char *argv[])
 {
