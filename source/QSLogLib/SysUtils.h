@@ -16,7 +16,7 @@
 #include <QProcess>
 #include <QDateTime>
 
-namespace SLogLib {
+namespace QSLogLib {
 
 // Sleep the current thread for specified milliseconds.
  void sleep(unsigned int msec);
@@ -30,6 +30,8 @@ uint64_t getCurrentThreadID();
 // Get the current local date and time.
 QDateTime getLocalDateTime();
 
+std::string getLocalDateTimeStdString();
+
 // Convert a type to string; the type must support std::ostringstream operator.
 template<class T>
 inline std::string toString(const T& x)
@@ -39,6 +41,6 @@ inline std::string toString(const T& x)
 	return _stream.str();
 }
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // SLOGLIB_SYSUTILS_H_

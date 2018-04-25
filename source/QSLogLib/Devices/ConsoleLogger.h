@@ -16,7 +16,7 @@
 
 #include <iostream>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // The ConsoleLogger class writes the logging messages to a console (STDOUT).
@@ -39,6 +39,6 @@ protected:
 	}
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
-#endif // _SLOGLIB_CONSOLELOGGER_H_
+#endif

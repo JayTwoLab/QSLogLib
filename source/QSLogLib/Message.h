@@ -10,9 +10,6 @@
 #ifndef _SLOGLIB_MESSAGE_H_
 #define _SLOGLIB_MESSAGE_H_
 
-#include "QSLogLib/CallInfo.h"
-#include "QSLogLib/SysUtils.h"
-
 #include <string>
 #include <stdint.h>
 #include <inttypes.h>
@@ -21,8 +18,9 @@
 #include <QDate>
 #include <QTime>
 
-namespace SLogLib {
-;
+#include "QSLogLib/SysUtils.h"
+
+namespace QSLogLib {
 
 // Levels indicating severity of message.
 const int MESSAGE_LEVEL_INFO    = 1;  // For logging general information.
@@ -37,15 +35,19 @@ struct Message
 	std::string  mUserMessage;
     QDateTime    mDateTime;
 	unsigned int mLevel;
-	CallStack*   mCallStack; // Don't delete; owned by LoggingManager.
+
     int64_t mProcessId;
     uint64_t mThreadId;
+
+    std::string fileName;
+    std::string funcName;
+    unsigned int lineNumber;
 	
 	Message()
-		: mLevel(MESSAGE_LEVEL_INFO), mCallStack(0), mProcessId(0), mThreadId(0)
+        : mLevel(MESSAGE_LEVEL_INFO), mProcessId(0), mThreadId(0), lineNumber(0)
 	{}
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_MESSAGE_H_

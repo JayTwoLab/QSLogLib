@@ -19,7 +19,7 @@
 #include <list>
 #include <vector>
 
-namespace SLogLib {
+namespace QSLogLib {
 
 class  AbstractLoggingDevice
 {
@@ -81,6 +81,6 @@ private:
 // Define a type for storing logging devices.
 typedef std::list<AbstractLoggingDevice*> LoggingDeviceList;
 
-};	// namespace SLogLib {
+};	// namespace
 
 #endif // _SLOGLIB_ABSTRACTLOGGINGDEVICE_H_

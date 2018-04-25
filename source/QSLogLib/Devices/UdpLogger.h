@@ -22,7 +22,7 @@
 #include <QUdpSocket>
 #include <QHostAddress>
 
-namespace SLogLib {
+namespace QSLogLib {
 
     class  UdpLogger : public AbstractLoggingDevice
 	{

@@ -16,7 +16,7 @@
 #include <QDate>
 #include <QTime>
 
-namespace SLogLib {
+namespace QSLogLib {
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 void sleep(unsigned int msec)
@@ -52,4 +52,13 @@ QDateTime getLocalDateTime()
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-}; // namespace SLogLib {
+std::string getLocalDateTimeStdString()
+{
+    QString qStr = getLocalDateTime().toString();
+    const char* szDateTime = qStr.toLocal8Bit().constData();
+    std::string utf8_text = szDateTime;
+    return utf8_text;
+}
+
+
+}; // end of namespace

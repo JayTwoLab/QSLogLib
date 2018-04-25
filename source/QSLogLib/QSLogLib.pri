@@ -54,7 +54,6 @@ INCLUDEPATH += $${QSLOG_PARENTPATH}/Devices
 INCLUDEPATH += $${QSLOG_PARENTPATH}/Formatters
 
 HEADERS += \
-$${QSLOG_HEADERPATH}CallInfo.h \
 $${QSLOG_HEADERPATH}LoggingManager.h \
 $${QSLOG_HEADERPATH}Message.h \
 $${QSLOG_HEADERPATH}SLogLib.h \
@@ -67,8 +66,7 @@ $${QSLOG_HEADERPATH}Formatters/AbstractFormatter.h \
 $${QSLOG_HEADERPATH}Formatters/DetailedFormatter.h \
 $${QSLOG_HEADERPATH}Formatters/ErrorFormatter.h \
 $${QSLOG_HEADERPATH}Formatters/InfoFormatter.h \
-$${QSLOG_HEADERPATH}Formatters/NullFormatter.h \
-$${QSLOG_HEADERPATH}AddToCallStack.h
+$${QSLOG_HEADERPATH}Formatters/NullFormatter.h
 
 SOURCES += \
 $${QSLOG_SOURCEPATH}LoggingManager.cpp \
@@ -76,6 +74,6 @@ $${QSLOG_SOURCEPATH}SLogLib.cpp \
 $${QSLOG_SOURCEPATH}SysUtils.cpp \
 $${QSLOG_SOURCEPATH}Devices/AbstractLoggingDevice.cpp \
 $${QSLOG_SOURCEPATH}Devices/FileLogger.cpp \
-$${QSLOG_SOURCEPATH}Devices/UdpLogger.cpp \
-$${QSLOG_SOURCEPATH}AddToCallStack.cpp
+$${QSLOG_SOURCEPATH}Devices/UdpLogger.cpp
+
 

@@ -11,8 +11,7 @@
 // UdpLogger.cpp
 //
 
-#include "QSLogLib/Devices/UdpLogger.h"
-#include "QSLogLib/SysUtils.h"
+#include <iostream>
 
 #include <QtGlobal>
 #include <QString>
@@ -20,7 +19,10 @@
 #include <QHostAddress>
 #include <QByteArray>
 
-namespace SLogLib { 
+#include "QSLogLib/Devices/UdpLogger.h"
+#include "QSLogLib/SysUtils.h"
+
+namespace QSLogLib {
 
 //------------------------------------------------------------------------
 UdpLogger::UdpLogger(std::string destAddress, unsigned short port,
@@ -77,6 +79,12 @@ void UdpLogger::_WriteMessages(const std::vector<std::string>& messages)
 
         QByteArray ba = QByteArray::fromStdString(strMsg);
         qint64 ret = udpSocket.writeDatagram( ba, DestAddress, usDestPort );
+        if ( (-1) == ret ) {
+            // failed to send data
+            std::cerr << "[" << getLocalDateTimeStdString() << "]"
+                      <<  " Failed to send UDP datagram."
+                      << std::endl;
+        }
     }
 }
 
@@ -86,4 +94,4 @@ void UdpLogger::_FlushBufferedMessages()
 }
 
 //------------------------------------------------------------------------
-} // end of namespace SLogLib
+} // end of namespace

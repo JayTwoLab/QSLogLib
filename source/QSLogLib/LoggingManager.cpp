@@ -9,10 +9,9 @@
 
 #include "LoggingManager.h"
 #include "SysUtils.h"
-#include "SysUtils.h"
 
-namespace SLogLib {
-;
+namespace QSLogLib {
+
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 LoggingManager::LoggingManager()
@@ -106,25 +105,7 @@ AbstractLoggingDevice* LoggingManager::QueryDevice(const std::string& deviceName
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
 
-/*
-void LoggingManager::PushFunction(const std::string& fileName,
-	                              const std::string& funcName, 
-								  unsigned int       lineNumber)
-{
-	if(!mIsDisabled)
-	{
-		mCallStack.push_back(CallInfo(fileName, funcName, lineNumber));
-	}
-}
 
-void LoggingManager::PopFunction()
-{
-	if(!mIsDisabled)
-	{
-		mCallStack.pop_back();
-	}
-}
-*/
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
@@ -137,16 +118,19 @@ void LoggingManager::WriteMessage(const std::string& fileName,
 	if(!mIsDisabled)
 	{
 		// Update the call stack.
-		mCallStack.push_back(CallInfo(fileName, funcName, lineNumber));
+        // mCallStack.push_back(CallInfo(fileName, funcName, lineNumber));
 		
 		// Generate the message.
 		Message _message;
 		_message.mUserMessage = message;
-		_message.mDateTime    = SLogLib::getLocalDateTime();
+        _message.mDateTime    = QSLogLib::getLocalDateTime();
 		_message.mLevel       = level;
-		_message.mCallStack   = &mCallStack;
-		_message.mProcessId   = SLogLib::getCurrentProcessID();
-		_message.mThreadId    = SLogLib::getCurrentThreadID();
+        _message.mProcessId   = QSLogLib::getCurrentProcessID();
+        _message.mThreadId    = QSLogLib::getCurrentThreadID();
+
+        _message.fileName = fileName;
+        _message.funcName = funcName;
+        _message.lineNumber = lineNumber;
 		
 		// Iterate over all LoggingDevices and write the message
 		// to the enabled devices.
@@ -154,16 +138,20 @@ void LoggingManager::WriteMessage(const std::string& fileName,
 		for( ; iter!=mLoggingDevices.end() ; ++iter)
 		{
 			AbstractLoggingDevice* _device = *iter;
-			if(_device->IsEnabled())
+            if ( NULL == _device )
+                continue;
+
+            if ( _device->IsEnabled() )
 			{
+                mMutex.lock();
 				_device->WriteMessage(_message);
+                mMutex.unlock();
 			}
 		}
-		
-		// Update the call stack.
-		mCallStack.erase(--mCallStack.end());
+
+
 	}
 }
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-};	// End namespace SLogLib.
+};	// End namespace

@@ -10,12 +10,11 @@
 #ifndef _SLOGLIB_LOGGING_H_
 #define _SLOGLIB_LOGGING_H_
 
-#include "QSLogLib/LoggingManager.h"
-#include "QSLogLib/AddToCallStack.h"
-#include "QSLogLib/Devices/AbstractLoggingDevice.h"
-
 #include <sstream>
 #include <string>
+
+#include "QSLogLib/LoggingManager.h"
+#include "QSLogLib/Devices/AbstractLoggingDevice.h"
 
 #if !defined(SLOGLIB_DISABLE_LOGGING)
 	// The macro to write the message to all logging devices.
@@ -26,7 +25,7 @@
 		unsigned int _lineNo = __LINE__;                 \
 		std::ostringstream __stream__unique__;           \
 		__stream__unique__ << msg;                       \
-		SLogLib::writeMessage(__FILE__,                  \
+        QSLogLib::writeMessage(__FILE__,                  \
                               __FUNCTION__,              \
 							  _lineNo,                   \
 							  level,                     \
@@ -34,11 +33,11 @@
 	}
 	
 	// Convenience macros to write the message at various levels.
-	#define SLOGLIB_LOG_MSG_INFO(msg)   SLOGLIB_LOG_MESSAGE(SLogLib::MESSAGE_LEVEL_INFO   , msg);
-	#define SLOGLIB_LOG_MSG_WARN(msg)   SLOGLIB_LOG_MESSAGE(SLogLib::MESSAGE_LEVEL_WARNING, msg);
-	#define SLOGLIB_LOG_MSG_ERROR(msg)  SLOGLIB_LOG_MESSAGE(SLogLib::MESSAGE_LEVEL_ERROR  , msg);
-	#define SLOGLIB_LOG_MSG_DEBUG(msg)  SLOGLIB_LOG_MESSAGE(SLogLib::MESSAGE_LEVEL_DEBUG  , msg);
-	#define SLOGLIB_LOG_MSG_DETAIL(msg) SLOGLIB_LOG_MESSAGE(SLogLib::MESSAGE_LEVEL_DEBUG  , msg);
+    #define SLOGLIB_LOG_MSG_INFO(msg)   SLOGLIB_LOG_MESSAGE(QSLogLib::MESSAGE_LEVEL_INFO   , msg);
+    #define SLOGLIB_LOG_MSG_WARN(msg)   SLOGLIB_LOG_MESSAGE(QSLogLib::MESSAGE_LEVEL_WARNING, msg);
+    #define SLOGLIB_LOG_MSG_ERROR(msg)  SLOGLIB_LOG_MESSAGE(QSLogLib::MESSAGE_LEVEL_ERROR  , msg);
+    #define SLOGLIB_LOG_MSG_DEBUG(msg)  SLOGLIB_LOG_MESSAGE(QSLogLib::MESSAGE_LEVEL_DEBUG  , msg);
+    #define SLOGLIB_LOG_MSG_DETAIL(msg) SLOGLIB_LOG_MESSAGE(QSLogLib::MESSAGE_LEVEL_DEBUG  , msg);
 	
 	// The macro to add the current function to the call stack.
 	#define SLOGLIB_ADD_TO_CALLSTACK SLogLib::AddToCallStack \
@@ -53,8 +52,7 @@
 	#define SLOGLIB_ADD_TO_CALLSTACK
 #endif
 
-namespace SLogLib {
-;
+namespace QSLogLib {
 
 // Add a new logging device.
  void addLoggingDevice(AbstractLoggingDevice* device);
@@ -80,6 +78,6 @@ namespace SLogLib {
  void enableLogging();
  bool isLoggingEnabled();
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_LOGGINGMANAGER_H_

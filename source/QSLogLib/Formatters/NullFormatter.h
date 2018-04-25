@@ -14,7 +14,7 @@
 
 #include <sstream>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // The NullFormatter class simply returns the user message and ignores all other fields in the 
@@ -43,6 +43,6 @@ public:
 	}
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_NULLFORMATTER_H_

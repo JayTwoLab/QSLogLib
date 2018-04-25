@@ -20,7 +20,7 @@
 #include <QDate>
 #include <QTime>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // The DetailedFormatter class formats all messages. A message is formatted as: 
@@ -45,9 +45,9 @@ public:
 	
 	inline std::string FormatMessage(const Message& msg) const
 	{
-		size_t _size = msg.mCallStack->size();
-		CallInfo _callInfo;
-		_callInfo = (*msg.mCallStack)[_size-1];
+        // size_t _size = msg.mCallStack->size();
+        // CallInfo _callInfo;
+        // _callInfo = (*msg.mCallStack)[_size-1];
 		
 		std::ostringstream _stream;
 		_stream << "Msg Level  : " << msg.mLevel                  << std::endl;
@@ -61,9 +61,16 @@ public:
                                    << std::endl;
 		_stream << "Process ID : " << msg.mProcessId              << std::endl;
 		_stream << "Thread ID  : " << msg.mThreadId               << std::endl;
+
+        _stream << "File Name  : " << msg.fileName               << std::endl;
+        _stream << "Func Name  : " << msg.funcName               << std::endl;
+        _stream << "Line No    : " << msg.lineNumber               << std::endl;
+
+        /*
 		_stream << "FileName   : " << _callInfo.mFileName         << std::endl;
 		_stream << "FuncName   : " << _callInfo.mFuncName         << std::endl;
 		_stream << "Line No.   : " << _callInfo.mLineNumber       << std::endl;
+
 		_stream << "CallStack  : ";
 		
 		for(size_t i=0 ; i<msg.mCallStack->size() ; ++i)
@@ -81,12 +88,13 @@ public:
 			_stream << " : " << _callInfo.mFuncName;
 			_stream << " [" << _callInfo.mLineNumber << "]" << std::endl;
 		}
+        */
 		
 		_stream << "Message    : " << msg.mUserMessage << std::endl << std::endl;
 		return _stream.str();
 	}
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_DETAILEDFORMATTER_H_

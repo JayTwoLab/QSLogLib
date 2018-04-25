@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     // Add these lines at the beginning of your program.
     // The devices and formatters are automatically deleted by SLogLib.
-    using namespace SLogLib;
+    using namespace QSLogLib;
 
     addLoggingDevice( new ConsoleLogger(new NullFormatter) );
     addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );

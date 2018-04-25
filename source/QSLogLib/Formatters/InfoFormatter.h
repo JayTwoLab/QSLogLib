@@ -11,10 +11,11 @@
 #define _SLOGLIB_INFOFORMATTER_H_
 
 #include "QSLogLib/Formatters/AbstractFormatter.h"
+
 #include <sstream>
 #include <iomanip>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // The InfoFormatter class formats only informational messages and ignores all other messages.
@@ -67,6 +68,6 @@ public:
 	}
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_INFOFORMATTER_H_

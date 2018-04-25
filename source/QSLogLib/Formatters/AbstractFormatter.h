@@ -16,7 +16,7 @@
 
 #include <string>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 enum NewLineFlag
@@ -45,6 +45,6 @@ protected:
 	NewLineFlag mNewLineFlag;
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_ABSTRACTFORMATTER_H_

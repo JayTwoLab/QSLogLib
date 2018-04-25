@@ -10,8 +10,7 @@
 #include "QSLogLib/Devices/FileLogger.h"
 #include "QSLogLib/SysUtils.h"
 
-namespace SLogLib {
-;
+namespace QSLogLib {
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 FileLogger::FileLogger(const std::string& fileName, AbstractFormatter* formatter)
@@ -57,7 +56,7 @@ void FileLogger::_WriteMessage(const std::string& message)
 {
 	if(mHasDelay)
 	{
-		SLogLib::sleep(mDelayAmount);
+        QSLogLib::sleep(mDelayAmount);
 	}
 	
 	mFileHandle << message;
@@ -75,7 +74,7 @@ void FileLogger::_WriteMessages(const std::vector<std::string>& messages)
 {
 	if(mHasDelay)
 	{
-		SLogLib::sleep(mDelayAmount);
+        QSLogLib::sleep(mDelayAmount);
 	}
 	
 	for(size_t i=0 ; i<messages.size() ; ++i)
@@ -90,4 +89,4 @@ void FileLogger::_WriteMessages(const std::vector<std::string>& messages)
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-};	// End namespace SLogLib.
+};	// End namespace

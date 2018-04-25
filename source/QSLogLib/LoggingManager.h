@@ -10,15 +10,14 @@
 #ifndef _SLOGLIB_LOGGINGMANAGER_H_
 #define _SLOGLIB_LOGGINGMANAGER_H_
 
-// #include <QMutex>
+#include <QtGlobal>
+#include <QMutex>
+#include <QVector>
 
-#include "QSLogLib/AddToCallStack.h"
 #include "QSLogLib/Devices/AbstractLoggingDevice.h"
 
-namespace SLogLib {
+namespace QSLogLib {
 
-// WARN: LoggingManager is not thread-safe!
-// TODO: make it thread-safe.
 class  LoggingManager
 {
 public:
@@ -41,17 +40,6 @@ public:
 	// Get a pointer to the logging device from name.
 	AbstractLoggingDevice* QueryDevice(const std::string& deviceName);
 
-    /*
-	// Push a function to the current call stack.
-	void PushFunction(const std::string& fileName, 
-		              const std::string& funcName,  
-					  unsigned int       lineNumber);
-	
-	// Pop the topmost function from the call stack.
-	void PopFunction();
-    */
-
-// LogThread
 	// Write the message to all enabled logging devices.
 	void WriteMessage(const std::string& fileName, 
 		              const std::string& funcName, 
@@ -59,8 +47,6 @@ public:
 					  unsigned int       level,
 					  const std::string& message);
 
-// LogThread::WriteMessage() : TO-MAKE
-// LoggingManager::WriteMessage()
 	
 	// Destruct the logger.
 	~LoggingManager();
@@ -88,14 +74,11 @@ private:
     // If true then disable logging.
     bool mIsDisabled;
 
-// LogThread
-	// For storing the current call stack.
-    CallStack mCallStack; // NOTE: call stack is needed for every thread!!
-
-// vector of LogThread
+    // mutex for log manager
+    QMutex mMutex;
 
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_LOGGINGMANAGER_H_

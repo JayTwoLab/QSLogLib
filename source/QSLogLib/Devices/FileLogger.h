@@ -16,7 +16,7 @@
 
 #include <fstream>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // The FileLogger class writes logging messages to a file.
@@ -78,6 +78,6 @@ private:
 	unsigned int  mDelayAmount;  // Default: 10 ms
 };
 
-};	// End namespace SLogLib.
+};	// End namespace
 
 #endif // _SLOGLIB_FILELOGGER_H_

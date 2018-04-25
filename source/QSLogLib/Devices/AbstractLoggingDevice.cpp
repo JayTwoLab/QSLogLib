@@ -11,7 +11,7 @@
 #include "QSLogLib/SysUtils.h"
 #include <cassert>
 
-namespace SLogLib {
+namespace QSLogLib {
 ;
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
@@ -19,7 +19,7 @@ AbstractLoggingDevice::AbstractLoggingDevice(AbstractFormatter* formatter)
 	: mFormatter(formatter), mIsEnabled(true), mIsBuffered(false), mNumBufferedMessages(1000)
 {
 	static int _deviceID = 1;
-	mName = "LoggingDevice" + SLogLib::toString(_deviceID++);
+    mName = "LoggingDevice" + QSLogLib::toString(_deviceID++);
 	mBufferedMessages.reserve(mNumBufferedMessages);
 }
 AbstractLoggingDevice::AbstractLoggingDevice(AbstractFormatter* formatter, const std::string& name)
@@ -123,4 +123,4 @@ void AbstractLoggingDevice::_FlushBufferedMessages()
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-};	// End namespace SLogLib.
+};	// End namespace

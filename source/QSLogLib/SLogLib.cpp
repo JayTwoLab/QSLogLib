@@ -9,8 +9,8 @@
 
 #include "SLogLib.h"
 
-namespace SLogLib {
-;
+namespace QSLogLib {
+
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 void addLoggingDevice(AbstractLoggingDevice* device)
@@ -71,4 +71,4 @@ bool isLoggingEnabled()
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 
-};	// End namespace SLogLib.
+};	// End namespace
