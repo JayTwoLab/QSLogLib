@@ -41,36 +41,39 @@ include(../../QSLogLib/QSLogLib.pri)
 
 int main(int argc, char *argv[])
 {
-	QCoreApplication mainApp(argc, argv);
+    QCoreApplication mainApp(argc, argv);
 
-	using namespace SLogLib;
+    // Add these lines at the beginning of your program.
+    // The devices and formatters are automatically deleted by SLogLib.
+    using namespace QSLogLib;
 
-	addLoggingDevice( new ConsoleLogger(new NullFormatter) );
-	addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
+    addLoggingDevice( new ConsoleLogger(new NullFormatter) );
+    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
 
-	// 다음 줄은 콘솔과 파일로 송신된다.
-	// 콘솔은 표준 출력을 의미하며, 파일은 'foo.log'를 의미한다.
-	int a = 10;
-	double b = 15.3;
-	const char* c = "Success";
-	SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
-	SLOGLIB_LOG_MSG_INFO(c);
+    // The following line writes the message to both console and file.
+    int a = 10;
+    double b = 15.3;
+    const char* c = "Success";
+    SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
+    SLOGLIB_LOG_MSG_INFO(c);
 
-	return 0;
+    return 0;
 }
 ```
 
 ### UDP 송신 예제
 ```cpp
-int main()
+int main(int argc, char *argv[])
 {
-	using namespace SLogLib;
+	QCoreApplication mainApp(argc, argv);
+
+	using namespace QSLogLib;
 
 	std::string strDestAddress = "192.168.137.1";
 	unsigned short destPort = 5000;
 	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
 
-	// 다음 줄은 UDP 소켓으로 송신된다.
+	// The following line writes the message to both console and file.
 	int a = 10;
 	double b = 15.3;
 	const char* c = "Success";
