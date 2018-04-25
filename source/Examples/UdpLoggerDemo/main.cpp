@@ -17,9 +17,7 @@
 
 int main()
 {
-	// Add these lines at the beginning of your program.
-	// The devices and formatters are automatically deleted by SLogLib.
-	using namespace SLogLib;
+    using namespace QSLogLib;
 
     std::string strDestAddress = "192.168.137.1";
     unsigned short destPort = 5000;

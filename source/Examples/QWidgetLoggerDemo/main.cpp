@@ -21,9 +21,9 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	
-	QWidgetLogger* _logger = new QWidgetLogger(new SLogLib::DetailedFormatter());
+    QWidgetLogger* _logger = new QWidgetLogger(new QSLogLib::DetailedFormatter());
 	_logger->show();
-	SLogLib::addLoggingDevice(_logger);
+    QSLogLib::addLoggingDevice(_logger);
 	
 	SLOGLIB_LOG_MSG_INFO("Testing 1");
 	SLOGLIB_LOG_MSG_INFO("Testing 2");

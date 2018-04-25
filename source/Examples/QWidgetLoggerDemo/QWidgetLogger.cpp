@@ -5,7 +5,7 @@
 
 #include "QWidgetLogger.h" 
 
-using namespace SLogLib;
+using namespace QSLogLib;
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
 QWidgetLogger::QWidgetLogger(AbstractFormatter* formatter)

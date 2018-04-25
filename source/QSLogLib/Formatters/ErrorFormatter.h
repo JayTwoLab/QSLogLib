@@ -65,14 +65,7 @@ public:
             _stream << "File Name  : " << msg.fileName               << std::endl;
             _stream << "Func Name  : " << msg.funcName               << std::endl;
             _stream << "Line No.   : " << msg.lineNumber              << std::endl;
-			
-            /*
-			CallInfo _callInfo = (*msg.mCallStack)[msg.mCallStack->size()-1];
-			_stream << "FileName   : " << _callInfo.mFileName   << std::endl;
-			_stream << "FuncName   : " << _callInfo.mFuncName   << std::endl;
-			_stream << "Line No.   : " << _callInfo.mLineNumber << std::endl;
-            */
-			
+
 			std::string _temp = msg.mUserMessage;
 			size_t      _loc   = _temp.find("\n");
 			while(_loc != std::string::npos)

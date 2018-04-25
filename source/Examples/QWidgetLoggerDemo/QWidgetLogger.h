@@ -9,15 +9,15 @@
 
 #include "QSLogLib/Devices/AbstractLoggingDevice.h"
 
-class QWidgetLogger : public QWidget, public SLogLib::AbstractLoggingDevice
+class QWidgetLogger : public QWidget, public QSLogLib::AbstractLoggingDevice
 {
 	Q_OBJECT
 	
 public:
 	
-	QWidgetLogger(SLogLib::AbstractFormatter* formatter);
-	QWidgetLogger(SLogLib::AbstractFormatter* formatter, const std::string& name);
-	QWidgetLogger(SLogLib::AbstractFormatter* formatter, const std::string& name, bool isEnabled, bool isBuffered, size_t numBufferedMessages);
+    QWidgetLogger(QSLogLib::AbstractFormatter* formatter);
+    QWidgetLogger(QSLogLib::AbstractFormatter* formatter, const std::string& name);
+    QWidgetLogger(QSLogLib::AbstractFormatter* formatter, const std::string& name, bool isEnabled, bool isBuffered, size_t numBufferedMessages);
 	~QWidgetLogger();
 	
 private:
