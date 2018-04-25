@@ -65,12 +65,12 @@ int main(int argc, char *argv[])
 ```cpp
 int main(int argc, char *argv[])
 {
-    QCoreApplication mainApp(argc, argv);
-    
-    using namespace QSLogLib;
+	QCoreApplication mainApp(argc, argv);
 
-    std::string strDestAddress = "192.168.137.1";
-    unsigned short destPort = 5000;
+	using namespace QSLogLib;
+
+	std::string strDestAddress = "192.168.137.1";
+	unsigned short destPort = 5000;
 	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
 
 	// The following line writes the message to both console and file.
