@@ -36,5 +36,4 @@ int main(int argc, char *argv[])
     SLOGLIB_LOG_MSG_INFO(c);
 
     return 0;
-    // return a.exec();
 }

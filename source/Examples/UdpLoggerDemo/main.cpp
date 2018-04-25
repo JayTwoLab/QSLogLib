@@ -15,8 +15,10 @@
 #include "QSLogLib/Formatters/InfoFormatter.h"
 #include "QSLogLib/Formatters/NullFormatter.h"
 
-int main()
+int main(int argc, char *argv[])
 {
+    QCoreApplication mainApp(argc, argv);
+
     using namespace QSLogLib;
 
     std::string strDestAddress = "192.168.137.1";
