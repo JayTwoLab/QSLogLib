@@ -10,11 +10,12 @@
 - Cmake is not any more supported. 
 - Use Qt. instead of complicated cross-platform code.
 - UDP client logger has been added. 
+- Other devices will be added. (RDBMS, NoSQL, Bletooth, Serial, DDS, MQ, etc)
 
 ## Example
 
 ### How to setup
-- First, include pri file on youq Qt project file(*.pro).
+- First, include pri file on your Qt project file(*.pro).
 ```
 # Define QSLogLib relative path. You can fix this directory
 #   QSLOG_PARENTPATH = ../../
