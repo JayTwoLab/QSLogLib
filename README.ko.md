@@ -43,15 +43,14 @@ int main(int argc, char *argv[])
 {
     QCoreApplication mainApp(argc, argv);
 
-    // Add these lines at the beginning of your program.
-    // The devices and formatters are automatically deleted by SLogLib.
     using namespace QSLogLib;
 
-    addLoggingDevice( new ConsoleLogger(new NullFormatter) );
-    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
+    // 로깅 장치 추가 
+    addLoggingDevice( new ConsoleLogger(new NullFormatter) ); // 콘솔(console) + 단순 로깅 형식(null format)
+    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) ); // 파일(file) + 자세한 로깅 형식(detailed format)
 
-    // The following line writes the message to both console and file.
-    int a = 10;
+    // 콘솔과 파일 모두로 로그가 출력됨
+    int a = 10;
     double b = 15.3;
     const char* c = "Success";
     SLOGLIB_LOG_MSG_INFO("a = " << a << " b = " << b);
@@ -73,7 +72,7 @@ int main(int argc, char *argv[])
 	unsigned short destPort = 5000;
 	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
 
-	// The following line writes the message to both console and file.
+	// UDP 패킷으로 로그를 송신
 	int a = 10;
 	double b = 15.3;
 	const char* c = "Success";
@@ -93,5 +92,5 @@ int main(int argc, char *argv[])
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
 	
-## 라이선스
-- MIT 라이선스
+## 라이센스
+- MIT 라이센스
