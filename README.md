@@ -44,12 +44,11 @@ int main(int argc, char *argv[])
 {
     QCoreApplication mainApp(argc, argv);
 
-    // Add these lines at the beginning of your program.
-    // The devices and formatters are automatically deleted by SLogLib.
     using namespace QSLogLib;
 
-    addLoggingDevice( new ConsoleLogger(new NullFormatter) );
-    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) );
+    // add logging device for console and file	
+    addLoggingDevice( new ConsoleLogger(new NullFormatter) ); // Console + nullFormat
+    addLoggingDevice( new FileLogger("foo.log", new DetailedFormatter) ); // File + detailedFormat
 
     // The following line writes the message to both console and file.
     int a = 10;
