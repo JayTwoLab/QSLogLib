@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	unsigned short destPort = 5000;
 	addLoggingDevice(new UdpLogger(strDestAddress, destPort, new NullFormatter));
 
-	// The following line writes the message to 
+	// The following line writes the message to UDP packet 
 	int a = 10;
 	double b = 15.3;
 	const char* c = "Success";
