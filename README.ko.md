@@ -1,6 +1,6 @@
 # QSLogLib
 
-> *Read this in other languages: [English](README.md), [한국어](README.ko.md)*
+> *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
 ## 소개
 - QSLogLib는 SLogLib를 Qt5로 이식한 라이브러리 입니다. 
@@ -13,7 +13,7 @@
 
 ## 예제
 
-### 설정 방법
+### :one: 설정 방법
 - 처음에 Qt 프로젝트 파일(*.pro)에 pri 파일을 추가합니다.
 ```
 # Define QSLogLib relative path. You can fix this directory
@@ -23,7 +23,7 @@
 include(../../QSLogLib/QSLogLib.pri)
 ```
 
-### 표준 출력/파일 로깅 예제
+### :two: 표준 출력/파일 로깅 예제
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-### UDP 송신 예제
+### :three: UDP 송신 예제
 ```cpp
 int main(int argc, char *argv[])
 {
