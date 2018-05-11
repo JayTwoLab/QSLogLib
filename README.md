@@ -1,6 +1,6 @@
 # QSLogLib
 
-> *Read this in other languages: [English](README.md), [한국어](README.ko.md)*
+> *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
 ## Introduction
 - QSLogLib is a log library based on SLogLibs.
