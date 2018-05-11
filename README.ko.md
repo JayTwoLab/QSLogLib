@@ -91,6 +91,9 @@ int main(int argc, char *argv[])
 ## 저자
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
-	
+
+## 문의
+-:email: j2doll@gmail.com
+
 ## 라이센스
 - MIT 라이센스
