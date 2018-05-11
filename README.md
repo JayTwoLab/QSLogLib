@@ -14,7 +14,7 @@
 
 ## Example
 
-### How to setup
+### :one: How to setup
 - First, include pri file on your Qt project file(*.pro).
 ```
 # Define QSLogLib relative path. You can fix this directory
@@ -24,7 +24,7 @@
 include(../../QSLogLib/QSLogLib.pri)
 ```
 
-### Logging Example for standard output and file
+### :two: Logging Example for standard output and file
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-### Logging Example for udp transmission
+### :three: Logging Example for udp transmission
 ```cpp
 int main(int argc, char *argv[])
 {
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
 
 ## Contacts
-- j2doll@gmail.com
+- :email: j2doll@gmail.com
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
 
 ## License
