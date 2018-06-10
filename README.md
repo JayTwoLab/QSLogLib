@@ -89,13 +89,11 @@ int main(int argc, char *argv[])
 - Qt 5.10.1 (MingW, Windows 32bit)
 - Qt 5.6.2 (Linux 64bit)
 
-## Authors
+## License and Authors
+- MIT License 
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
 
-## Contacts
-- :email: j2doll@gmail.com
+## Contact
+- Leave me a issue. https://github.com/j2doll/QSLogLib/issues 
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
-
-## License
-- MIT License
