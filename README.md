@@ -2,7 +2,8 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-## Introduction
+![](markdown.data/QSLogLib.png)
+
 - QSLogLib is a log library based on SLogLibs.
 - It is ported to Qt with improved devices and function.
 

@@ -2,7 +2,8 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-## 소개
+![](markdown.data/QSLogLib.png)
+
 - QSLogLib는 SLogLib를 Qt5로 이식한 라이브러리 입니다. 
 - 향상된 장치와 기능으로 Qt로 포팅되었습니다.
 
