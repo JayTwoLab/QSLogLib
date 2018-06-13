@@ -2,7 +2,7 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-![](markdown.data/QSLogLib.png)
+![](markdown.data/qsloglib1.jpg)
 
 - QSLogLib는 SLogLib를 Qt5로 이식한 라이브러리 입니다. 
 - 향상된 장치와 기능으로 Qt로 포팅되었습니다.
@@ -93,6 +93,9 @@ int main(int argc, char *argv[])
 - MIT 라이센스
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
+
+## 할 일 
+- 멀티쓰레딩을 적용한 비동기 로깅
 
 ## 문의
 -이슈를 남겨 주세요. https://github.com/j2doll/QSLogLib/issues

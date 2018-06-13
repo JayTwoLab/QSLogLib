@@ -2,7 +2,7 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-![](markdown.data/QSLogLib.png)
+![](markdown.data/qsloglib1.jpg)
 
 - QSLogLib is a log library based on SLogLibs.
 - It is ported to Qt with improved devices and function.
@@ -93,6 +93,9 @@ int main(int argc, char *argv[])
 - MIT License 
 - SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
 - QSLogLib : j2doll https://github.com/j2doll/QSLogLib
+
+## To Do
+- Async. logging with multi-threading processing.
 
 ## Contact
 - Leave me a issue. https://github.com/j2doll/QSLogLib/issues 
