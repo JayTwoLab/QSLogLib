@@ -2,7 +2,7 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-![](markdown.data/qsloglib1.jpg)
+<p align="center"><img src="https://github.com/j2doll/QSLogLib/raw/master/markdown.data/qsloglib1.jpg"></p>
 
 - QSLogLib is a log library based on SLogLibs.
 - It is ported to Qt with improved devices and function.
@@ -16,8 +16,10 @@
 ## Example
 
 ### :one: How to setup
+
 - First, include pri file on your Qt project file(*.pro).
-```
+
+```qmake
 # Define QSLogLib relative path. You can fix this directory
 #   QSLOG_PARENTPATH = ../../
 #   QSLOG_HEADERPATH = ../../QSLogLib/
@@ -26,6 +28,7 @@ include(../../QSLogLib/QSLogLib.pri)
 ```
 
 ### :two: Logging Example for standard output and file
+
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -63,6 +66,7 @@ int main(int argc, char *argv[])
 ```
 
 ### :three: Logging Example for udp transmission
+
 ```cpp
 int main(int argc, char *argv[])
 {
@@ -86,17 +90,19 @@ int main(int argc, char *argv[])
 ```
 
 ## Test Environment
+
 - Qt 5.10.1 (MingW, Windows 32bit)
 - Qt 5.6.2 (Linux 64bit)
 
 ## License and Authors
-- MIT License 
-- SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
-- QSLogLib : j2doll https://github.com/j2doll/QSLogLib
+
+- QSLogLib is under MIT License. 
+	- SLogLib : Saurabh Garg [https://github.com/saurabhg17/SLogLib](https://github.com/saurabhg17/SLogLib)
+	- QSLogLib : j2doll [https://github.com/j2doll/QSLogLib](https://github.com/j2doll/QSLogLib)
 
 ## To Do
 - Async. logging with multi-threading processing.
 
 ## Contact
-- Leave me a issue. https://github.com/j2doll/QSLogLib/issues 
+- Leave me a issue. [https://github.com/j2doll/QSLogLib/issues](https://github.com/j2doll/QSLogLib/issues) 
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)

@@ -2,7 +2,7 @@
 
 > *Read this in other languages: [English](README.md), :kr: [한국어](README.ko.md)*
 
-![](markdown.data/qsloglib1.jpg)
+<p align="center"><img src="https://github.com/j2doll/QSLogLib/raw/master/markdown.data/qsloglib1.jpg"></p>
 
 - QSLogLib는 SLogLib를 Qt5로 이식한 라이브러리 입니다. 
 - 향상된 장치와 기능으로 Qt로 포팅되었습니다.
@@ -15,8 +15,10 @@
 ## 예제
 
 ### :one: 설정 방법
+
 - 처음에 Qt 프로젝트 파일(*.pro)에 pri 파일을 추가합니다.
-```
+
+```qmake
 # Define QSLogLib relative path. You can fix this directory
 #   QSLOG_PARENTPATH = ../../
 #   QSLOG_HEADERPATH = ../../QSLogLib/
@@ -25,6 +27,7 @@ include(../../QSLogLib/QSLogLib.pri)
 ```
 
 ### :two: 표준 출력/파일 로깅 예제
+
 ```cpp
 #include <QtGlobal>
 #include <QCoreApplication>
@@ -62,6 +65,7 @@ int main(int argc, char *argv[])
 ```
 
 ### :three: UDP 송신 예제
+
 ```cpp
 int main(int argc, char *argv[])
 {
@@ -90,12 +94,12 @@ int main(int argc, char *argv[])
 - Qt 5.6.2 (Linux 64bit)
 
 ## 라이센스
-- MIT 라이센스
-- SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
-- QSLogLib : j2doll https://github.com/j2doll/QSLogLib
+- QSLogLib는 MIT 라이센스입니다.
+	- SLogLib : Saurabh Garg [https://github.com/saurabhg17/SLogLib](https://github.com/saurabhg17/SLogLib)
+	- QSLogLib : j2doll [https://github.com/j2doll/QSLogLib](https://github.com/j2doll/QSLogLib)
 
 ## 할 일 
 - 멀티쓰레딩을 적용한 비동기 로깅
 
 ## 문의
--이슈를 남겨 주세요. https://github.com/j2doll/QSLogLib/issues
+-이슈를 남겨 주세요. [https://github.com/j2doll/QSLogLib/issues](https://github.com/j2doll/QSLogLib/issues)
