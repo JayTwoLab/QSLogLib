@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
 
 ## Test Environment
 
+- Qt 6.0.0 (MingW, Windows 64bit)
 - Qt 5.10.1 (MingW, Windows 32bit)
 - Qt 5.6.2 (Linux 64bit)
 
