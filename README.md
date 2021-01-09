@@ -97,12 +97,12 @@ int main(int argc, char *argv[])
 ## License and Authors
 
 - QSLogLib is under MIT License. 
-	- SLogLib : Saurabh Garg [https://github.com/saurabhg17/SLogLib](https://github.com/saurabhg17/SLogLib)
-	- QSLogLib : j2doll [https://github.com/j2doll/QSLogLib](https://github.com/j2doll/QSLogLib)
+	- SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
+	- QSLogLib : j2doll https://github.com/JayTwoLab/QSLogLib
 
 ## To Do
 - Async. logging with multi-threading processing.
 
 ## Contact
-- Leave me a issue. [https://github.com/j2doll/QSLogLib/issues](https://github.com/j2doll/QSLogLib/issues) 
+- Leave me a issue. https://github.com/JayTwoLab/QSLogLib/issues
 - Hi! I'm j2doll. My native language is not English and my English is not fluent. Please, use EASY English. :-)
