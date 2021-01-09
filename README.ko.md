@@ -95,11 +95,11 @@ int main(int argc, char *argv[])
 
 ## 라이센스
 - QSLogLib는 MIT 라이센스입니다.
-	- SLogLib : Saurabh Garg [https://github.com/saurabhg17/SLogLib](https://github.com/saurabhg17/SLogLib)
-	- QSLogLib : j2doll [https://github.com/j2doll/QSLogLib](https://github.com/j2doll/QSLogLib)
+	- SLogLib : Saurabh Garg https://github.com/saurabhg17/SLogLib
+	- QSLogLib : j2doll https://github.com/JayTwoLab/QSLogLib
 
 ## 할 일 
 - 멀티쓰레딩을 적용한 비동기 로깅
 
 ## 문의
--이슈를 남겨 주세요. [https://github.com/j2doll/QSLogLib/issues](https://github.com/j2doll/QSLogLib/issues)
+-이슈를 남겨 주세요. https://github.com/JayTwoLab/QSLogLib/issues
